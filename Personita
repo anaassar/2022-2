@@ -1,0 +1,122 @@
+package minia;
+
+public class Personita {
+
+		private String nombre= "ana", genero= "f", cedula= "";
+		private int edad= 17;
+		private double peso=0, estat=0;
+		
+		private final int debajoDelPeso= -1;
+		private final int pesoIdeal= -1;
+		private final int sobrePeso= -1;
+	
+	public Personita() {
+		nombre = "";
+		edad = 0;
+		genero = "";
+		cedula= "";
+		peso= 0;
+		estat= 0;
+	}
+	
+	public Personita(String entNombre, int entEdad, String entGenero) {
+		nombre = entNombre;
+		edad = entEdad;
+		genero = entGenero;
+		cedula= "";
+		peso= 0;
+		estat= 0;
+	}
+	
+	public Personita(String entNombre, String entGenero, int entEdad, String entCedula, double entPeso, double entEstat) {
+		nombre = entNombre;
+		edad = entEdad;
+		genero = entGenero;
+		cedula= entCedula;
+		peso= entPeso;
+		estat= entEstat;	
+	}
+
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+	
+	
+	public int calcularPesoIdeal() {
+		long pesoActual = Math.round(peso/(estat*estat));
+		
+		if(pesoActual< 20) {
+			
+			return -1;
+		}
+		if((pesoActual>= 20)&&(pesoActual<=25)) {
+			
+			return 0;
+		}
+		if(pesoActual>25) {
+	
+			return 1;
+		}
+		
+		
+		return 0;
+	}
+	
+	public boolean esMayordeEdad() {
+		
+		if(edad>=18) {
+			return true;
+		}
+		return false;
+	}
+	
+	public String toString() {
+		return "Nombre: "+nombre + "Edad: ";
+		
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+	public void setEstat(double estat) {
+		this.estat = estat;
+	}
+	
+	
+}
+
+
+
+
+
+
+package minia;
+
+public class ClasePrincipal {
+
+	public ClasePrincipal() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Persona miPersona = new Persona();
+
+	}
+
+}
